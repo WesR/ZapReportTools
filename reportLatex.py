@@ -46,13 +46,15 @@ def preamble(website = str(), author = "GIS", date = "2020"):
 
 def abstract(websites = list()):
     output =  str()
+    output += "\n\\vspace*{5pt}"
     output += "\n\\begin{abstract}"
     output += "\nThis is a scan of "
     for site in websites:
         output += site + ", "
     
     output = output[0:-2]#Remove extra .space
-    output += "\n. This is blah blah blah boiler plate stuff."
+    output += ". This boiler plate text about things. Probably a big paragraph on what this whole report is made for"
+    output += "\n \\newpage"
     output += "\n\\end{abstract}"
     return output
 
@@ -63,7 +65,7 @@ def instances(scan, index):
     output += "\n\\begin{tabular}{| l | p{12cm}}"
 
     for key,value in scan.items():
-        output += "\n" + latexClean(key) + " & " + latexClean(value) + " \\\\"
+        output += "\n" + latexClean(key) + " & \\texttt{" + latexClean(value) + "} \\\\"
     
     output += "\n\\end{tabular}"
     return output
