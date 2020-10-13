@@ -111,7 +111,7 @@ def alert(scan):
 def site(scan):
     output = str()
 
-    output += "\n\\section{Findings for wesring.com}"
+    output += "\n\\section{Findings for " + scan["@host"] + "}"
     output += "\nScan of " + scan["@host"] + " was done over port "+scan["@port"]+" and with SSL "+scan["@ssl"]+"."
 
     #sort alerts
@@ -158,7 +158,8 @@ if __name__ == "__main__":
     document = str()
     document += preamble(scan["site"][0]["@host"], "Wes Ring", scan["@generated"])
     document += abstract([scan["site"][0]["@host"]])
-    document += site(scan["site"][0])
+    for x in scan["site"]:
+        document += site(x)
     document += endDoc()
 
     text_file = open("./outputTest/Output.tex", "w")

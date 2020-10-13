@@ -29,7 +29,7 @@
 This is a scan of localhost
 . This is blah blah blah boiler plate stuff.
 \end{abstract}
-\section{Findings for wesring.com}
+\section{Findings for localhost}
 Scan of localhost was done over port 80 and with SSL false.
 \subsection{High}
 \subsubsection{Remote OS Command Injection}
@@ -1191,6 +1191,147 @@ method & GET \\
 \item \url{https://tools.ietf.org/html/rfc6265\#section-4.1}
 \item \url{https://owasp.org/www-project-web-security-testing-guide/v41/4-Web{\_}Application{\_}Security{\_}Testing/06-Session{\_}Management{\_}Testing/02-Testing{\_}for{\_}Cookies{\_}Attributes.html}
 \item \url{http://code.google.com/p/browsersec/wiki/Part2\#Same-origin{\_}policy{\_}for{\_}cookies}
+\end{itemize}
+\end{itemize}
+\section{Findings for content-signature-2.cdn.mozilla.net}
+Scan of content-signature-2.cdn.mozilla.net was done over port 443 and with SSL true.
+\subsection{Low}
+\subsubsection{X-Content-Type-Options Header Missing}
+\begin{itemize}
+\item[] \textbf{Confidence} : 2
+\item[] \textbf{Description} : The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+\item[] \textbf{Solution} :  Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+\item[] \textbf{Instances}
+\begin{enumerate}
+\item[] 0
+\begin{tabular}{| l | p{14cm}}
+uri & https://content-signature-2.cdn.mozilla.net/chains/remote-settings.content-signature.mozilla.org-2020-11-24-15-03-46.chain \\
+method & GET \\
+param & X-Content-Type-Options \\
+\end{tabular}
+\end{enumerate}
+\item[] \textbf{Reference} : 
+\begin{itemize}
+\item \url{http://msdn.microsoft.com/en-us/library/ie/gg622941\%28v=vs.85\%29.aspx}
+\item \url{https://owasp.org/www-community/Security{\_}Headers}
+\end{itemize}
+\end{itemize}
+\section{Findings for firefox.settings.services.mozilla.com}
+Scan of firefox.settings.services.mozilla.com was done over port 443 and with SSL true.
+\subsection{Low}
+\subsubsection{Incomplete or No Cache-control and Pragma HTTP Header Set}
+\begin{itemize}
+\item[] \textbf{Confidence} : 2
+\item[] \textbf{Description} : The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.
+\item[] \textbf{Solution} :  Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate; and that the pragma HTTP header is set with no-cache.
+\item[] \textbf{Instances}
+\begin{enumerate}
+\item[] 0
+\begin{tabular}{| l | p{14cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/monitor/collections/changes/records?collection=messaging-experiments\&bucket=main \\
+method & GET \\
+param & Cache-Control \\
+evidence & max-age=60 \\
+\end{tabular}
+\item[] 1
+\begin{tabular}{| l | p{14cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/messaging-experiments/changeset?{\_}expected=1602090770178 \\
+method & GET \\
+param & Cache-Control \\
+\end{tabular}
+\item[] 2
+\begin{tabular}{| l | p{14cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/partitioning-exempt-urls/changeset?{\_}expected=1592906663254 \\
+method & GET \\
+param & Cache-Control \\
+\end{tabular}
+\item[] 3
+\begin{tabular}{| l | p{14cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/whats-new-panel/changeset?{\_}expected=1600274380060 \\
+method & GET \\
+param & Cache-Control \\
+\end{tabular}
+\item[] 4
+\begin{tabular}{| l | p{14cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/monitor/collections/changes/records?collection=partitioning-exempt-urls\&bucket=main \\
+method & GET \\
+param & Cache-Control \\
+evidence & max-age=60 \\
+\end{tabular}
+\item[] 5
+\begin{tabular}{| l | p{14cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/monitor/collections/changes/records?collection=whats-new-panel\&bucket=main \\
+method & GET \\
+param & Cache-Control \\
+evidence & max-age=60 \\
+\end{tabular}
+\end{enumerate}
+\item[] \textbf{Reference} : 
+\begin{itemize}
+\item \url{https://cheatsheetseries.owasp.org/cheatsheets/Session{\_}Management{\_}Cheat{\_}Sheet.html\#web-content-caching}
+\end{itemize}
+\end{itemize}
+\subsection{Informational}
+\subsubsection{Timestamp Disclosure - Unix}
+\begin{itemize}
+\item[] \textbf{Confidence} : 1
+\item[] \textbf{Description} : A timestamp was disclosed by the application/web server - Unix
+\item[] \textbf{Solution} :  Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.
+\item[] \textbf{Instances}
+\begin{enumerate}
+\item[] 0
+\begin{tabular}{| l | p{14cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/whats-new-panel/changeset?{\_}expected=1600274380060 \\
+method & GET \\
+evidence & 345600000 \\
+\end{tabular}
+\end{enumerate}
+\item[] \textbf{Reference} : 
+\begin{itemize}
+\item \url{http://projects.webappsec.org/w/page/13246936/Information\%20Leakage}
+\end{itemize}
+\end{itemize}
+\section{Findings for snippets.cdn.mozilla.net}
+Scan of snippets.cdn.mozilla.net was done over port 443 and with SSL true.
+\subsection{Low}
+\subsubsection{X-Content-Type-Options Header Missing}
+\begin{itemize}
+\item[] \textbf{Confidence} : 2
+\item[] \textbf{Description} : The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+\item[] \textbf{Solution} :  Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+\item[] \textbf{Instances}
+\begin{enumerate}
+\item[] 0
+\begin{tabular}{| l | p{14cm}}
+uri & https://snippets.cdn.mozilla.net/us-west/bundles-pregen/Firefox/release/en-us/default.json \\
+method & GET \\
+param & X-Content-Type-Options \\
+\end{tabular}
+\end{enumerate}
+\item[] \textbf{Reference} : 
+\begin{itemize}
+\item \url{http://msdn.microsoft.com/en-us/library/ie/gg622941\%28v=vs.85\%29.aspx}
+\item \url{https://owasp.org/www-community/Security{\_}Headers}
+\end{itemize}
+\end{itemize}
+\subsubsection{Incomplete or No Cache-control and Pragma HTTP Header Set}
+\begin{itemize}
+\item[] \textbf{Confidence} : 2
+\item[] \textbf{Description} : The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.
+\item[] \textbf{Solution} :  Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate; and that the pragma HTTP header is set with no-cache.
+\item[] \textbf{Instances}
+\begin{enumerate}
+\item[] 0
+\begin{tabular}{| l | p{14cm}}
+uri & https://snippets.cdn.mozilla.net/us-west/bundles-pregen/Firefox/release/en-us/default.json \\
+method & GET \\
+param & Cache-Control \\
+evidence & max-age=600 \\
+\end{tabular}
+\end{enumerate}
+\item[] \textbf{Reference} : 
+\begin{itemize}
+\item \url{https://cheatsheetseries.owasp.org/cheatsheets/Session{\_}Management{\_}Cheat{\_}Sheet.html\#web-content-caching}
 \end{itemize}
 \end{itemize}
 \end{document}
