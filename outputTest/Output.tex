@@ -5,7 +5,7 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 %opening
-\title{ZAP Scan report of localhost}
+\title{ZAP Scan report of DVWA}
 \author{Wes Ring}
 \date{Sun, 11 Oct 2020 22:53:11}
 \hbadness=99999
@@ -40,7 +40,7 @@ Scan of localhost was done over port 80 and with SSL false.
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/exec/ \\
 method & POST \\
 param & ip \\
@@ -50,7 +50,7 @@ attack & ZAP\&sleep 15\& \\
 \item[] \textbf{Reference} : 
 \begin{itemize}
 \item \url{http://cwe.mitre.org/data/definitions/78.html}
-\item \url{https://owasp.org/www-community/attacks/Command{\_}Injection}
+\item \url{https://owasp.org/www-community/attacks/Command\_Injection}
 \end{itemize}
 \end{itemize}
 \subsubsection{Path Traversal}
@@ -61,7 +61,7 @@ attack & ZAP\&sleep 15\& \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/fi/?page=\%2Fetc\%2Fpasswd \\
 method & GET \\
 param & page \\
@@ -83,14 +83,14 @@ evidence & root:x:0:0 \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/upload/ \\
 method & POST \\
-param & MAX{\_}FILE{\_}SIZE \\
+param & MAX\_FILE\_SIZE \\
 attack & 100000 OR 1=1 \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/captcha/ \\
 method & POST \\
 param & step \\
@@ -99,7 +99,7 @@ attack & 1 OR 1=1 \\
 \end{enumerate}
 \item[] \textbf{Reference} : 
 \begin{itemize}
-\item \url{https://cheatsheetseries.owasp.org/cheatsheets/SQL{\_}Injection{\_}Prevention{\_}Cheat{\_}Sheet.html}
+\item \url{https://cheatsheetseries.owasp.org/cheatsheets/SQL\_Injection\_Prevention\_Cheat\_Sheet.html}
 \end{itemize}
 \end{itemize}
 \subsection{Medium}
@@ -111,121 +111,121 @@ attack & 1 OR 1=1 \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/?C=S;O=D \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/js/ \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/?C=D;O=A \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/?C=N;O=A \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/brute/ \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=D;O=A \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 6
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/xss{\_}d/?default \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/xss\_d/?default \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 7
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=S;O=A \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 8
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/?C=D;O=D \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 9
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/about.php \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 10
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=S;O=A \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 11
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 12
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/weak{\_}id/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/weak\_id/ \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 13
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/instructions.php \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 14
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/instructions.php?doc=PHPIDS-license \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 15
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/?C=N;O=D \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 16
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/ \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 17
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=D;O=D \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 18
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/ \\
 method & GET \\
 param & X-Frame-Options \\
 \end{tabular}
 \item[] 19
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=M;O=A \\
 method & GET \\
 param & X-Frame-Options \\
@@ -244,121 +244,121 @@ param & X-Frame-Options \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/?C=M;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/?C=M;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=D;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/?C=M;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/?C=M;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=D;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 6
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=D;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 7
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=D;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 8
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=M;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 9
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/js/?C=N;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 10
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/?C=D;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 11
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/js/?C=N;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 12
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/?C=M;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 13
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=M;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 14
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/?C=N;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 15
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/?C=D;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 16
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=N;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 17
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/?C=S;O=A \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 18
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/?C=N;O=D \\
 method & GET \\
 evidence & Parent Directory \\
 \end{tabular}
 \item[] 19
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=N;O=A \\
 method & GET \\
 evidence & Parent Directory \\
@@ -374,37 +374,37 @@ evidence & Parent Directory \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/js/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/ \\
 method & GET \\
 attack & Parent Directory \\
@@ -424,49 +424,49 @@ attack & Parent Directory \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/docs/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/js/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 6
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/ \\
 method & GET \\
 attack & Parent Directory \\
 \end{tabular}
 \item[] 7
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/ \\
 method & GET \\
 attack & Parent Directory \\
@@ -486,14 +486,14 @@ attack & Parent Directory \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/csp/ \\
 method & POST \\
 param & Content-Security-Policy \\
 evidence & script-src 'self' https://pastebin.com  example.com code.jquery.com https://ssl.google-analytics.com ; \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/csp/ \\
 method & GET \\
 param & Content-Security-Policy \\
@@ -518,121 +518,121 @@ evidence & script-src 'self' https://pastebin.com  example.com code.jquery.com h
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/spanner.png \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/xss{\_}d/?default \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/xss\_d/?default \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/images/?C=N;O=A \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=S;O=A \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/?C=D;O=A \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/?C=S;O=A \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 6
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/dvwaPage.inc.php \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 7
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=S;O=D \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 8
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/js/ \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 9
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/instructions.php \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 10
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/help.css \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 11
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/?C=D;O=A \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 12
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/?C=N;O=A \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 13
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/about.php \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 14
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/main.css \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 15
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/sqli/ \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 16
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/css/?C=N;O=D \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 17
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/?C=S;O=D \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 18
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=S;O=D \\
 method & GET \\
 param & X-Content-Type-Options \\
 \end{tabular}
 \item[] 19
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/?C=D;O=A \\
 method & GET \\
 param & X-Content-Type-Options \\
@@ -641,7 +641,7 @@ param & X-Content-Type-Options \\
 \item[] \textbf{Reference} : 
 \begin{itemize}
 \item \url{http://msdn.microsoft.com/en-us/library/ie/gg622941\%28v=vs.85\%29.aspx}
-\item \url{https://owasp.org/www-community/Security{\_}Headers}
+\item \url{https://owasp.org/www-community/Security\_Headers}
 \end{itemize}
 \end{itemize}
 \subsubsection{Absence of Anti-CSRF Tokens}
@@ -652,121 +652,121 @@ param & X-Content-Type-Options \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/upload/ \\
 method & GET \\
 evidence & $<$form enctype="multipart/form-data" action="\#" method="POST"$>$ \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/sqli/?Submit=Submit\&id=ZAP \\
 method & GET \\
 evidence & $<$form action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/weak{\_}id/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/weak\_id/ \\
 method & GET \\
 evidence & $<$form method="post"$>$ \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & GET \\
-evidence & $<$form name="low{\_}js" method="post"$>$ \\
+evidence & $<$form name="low\_js" method="post"$>$ \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/brute/?Login=Login\&password=ZAP\&username=ZAP \\
 method & GET \\
 evidence & $<$form action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/login.php \\
 method & GET \\
 evidence & $<$form action="login.php" method="post"$>$ \\
 \end{tabular}
 \item[] 6
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/csrf/?Change=Change\&password{\_}conf=ZAP\&password{\_}new=ZAP \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/csrf/?Change=Change\&password\_conf=ZAP\&password\_new=ZAP \\
 method & GET \\
 evidence & $<$form action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 7
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/exec/ \\
 method & POST \\
 evidence & $<$form name="ping" action="\#" method="post"$>$ \\
 \end{tabular}
 \item[] 8
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/sqli{\_}blind/?Submit=Submit\&id=ZAP \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/sqli\_blind/?Submit=Submit\&id=ZAP \\
 method & GET \\
 evidence & $<$form action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 9
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/weak{\_}id/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/weak\_id/ \\
 method & POST \\
 evidence & $<$form method="post"$>$ \\
 \end{tabular}
 \item[] 10
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/xss{\_}s/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/xss\_s/ \\
 method & POST \\
 evidence & $<$form method="post" name="guestform" "$>$ \\
 \end{tabular}
 \item[] 11
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/view{\_}source.php \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/view\_source.php \\
 method & GET \\
 evidence & $<$form$>$ \\
 \end{tabular}
 \item[] 12
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/xss{\_}r/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/xss\_r/ \\
 method & GET \\
 evidence & $<$form name="XSS" action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 13
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/sqli{\_}blind/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/sqli\_blind/ \\
 method & GET \\
 evidence & $<$form action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 14
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/xss{\_}r/?name=ZAP \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/xss\_r/?name=ZAP \\
 method & GET \\
 evidence & $<$form name="XSS" action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 15
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/exec/ \\
 method & GET \\
 evidence & $<$form name="ping" action="\#" method="post"$>$ \\
 \end{tabular}
 \item[] 16
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/sqli/ \\
 method & GET \\
 evidence & $<$form action="\#" method="GET"$>$ \\
 \end{tabular}
 \item[] 17
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/xss{\_}s/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/xss\_s/ \\
 method & GET \\
 evidence & $<$form method="post" name="guestform" "$>$ \\
 \end{tabular}
 \item[] 18
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/captcha/ \\
 method & GET \\
 evidence & $<$form action="\#" method="POST" style="display:none;"$>$ \\
 \end{tabular}
 \item[] 19
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/setup.php \\
 method & GET \\
 evidence & $<$form action="\#" method="post"$>$ \\
@@ -786,14 +786,14 @@ evidence & $<$form action="\#" method="post"$>$ \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/captcha/ \\
 method & GET \\
 param & https://www.google.com/recaptcha/api.js \\
 evidence & $<$script src='https://www.google.com/recaptcha/api.js'$>$$<$/script$>$ \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/captcha/ \\
 method & POST \\
 param & https://www.google.com/recaptcha/api.js \\
@@ -810,25 +810,25 @@ evidence & $<$script src='https://www.google.com/recaptcha/api.js'$>$$<$/script$
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/fi/?page=file1.php \\
 method & GET \\
 evidence & 172.17.0.1 \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/fi/?page=file3.php \\
 method & GET \\
 evidence & 172.17.0.1 \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/ids{\_}log.php \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/ids\_log.php \\
 method & GET \\
 evidence & 172.17.0.2 \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/phpinfo.php \\
 method & GET \\
 evidence & 172.17.0.2:80 \\
@@ -847,13 +847,13 @@ evidence & 172.17.0.2:80 \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/MySQL.php \\
 method & GET \\
 evidence & HTTP/1.0 500 Internal Server Error \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/dvwa/includes/DBMS/PGSQL.php \\
 method & GET \\
 evidence & HTTP/1.0 500 Internal Server Error \\
@@ -869,21 +869,21 @@ evidence & HTTP/1.0 500 Internal Server Error \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/ \\
 method & GET \\
 param & PHPSESSID \\
 evidence & Set-Cookie: PHPSESSID \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/weak{\_}id/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/weak\_id/ \\
 method & POST \\
 param & dvwaSession \\
 evidence & Set-Cookie: dvwaSession \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/ \\
 method & GET \\
 param & security \\
@@ -903,22 +903,22 @@ evidence & Set-Cookie: security \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/ \\
 method & GET \\
 param & security \\
 evidence & Set-Cookie: security \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/ \\
 method & GET \\
 param & PHPSESSID \\
 evidence & Set-Cookie: PHPSESSID \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/weak{\_}id/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/weak\_id/ \\
 method & POST \\
 param & dvwaSession \\
 evidence & Set-Cookie: dvwaSession \\
@@ -937,13 +937,13 @@ evidence & Set-Cookie: dvwaSession \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/instructions.php \\
 method & GET \\
 evidence & PHP warning \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/instructions.php?doc=readme \\
 method & GET \\
 evidence & PHP warning \\
@@ -960,121 +960,121 @@ evidence & PHP warning \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000071009 \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 evidence & 606105819 \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & GET \\
 evidence & 1894986606 \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000339686 \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & GET \\
 evidence & 1094730640 \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 evidence & 405537848 \\
 \end{tabular}
 \item[] 6
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 evidence & 187363961 \\
 \end{tabular}
 \item[] 7
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000341194 \\
 \end{tabular}
 \item[] 8
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000345972 \\
 \end{tabular}
 \item[] 9
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000339382 \\
 \end{tabular}
 \item[] 10
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/phpinfo.php \\
 method & GET \\
 evidence & 20150407 \\
 \end{tabular}
 \item[] 11
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 evidence & 681279174 \\
 \end{tabular}
 \item[] 12
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000042762 \\
 \end{tabular}
 \item[] 13
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 evidence & 155497632 \\
 \end{tabular}
 \item[] 14
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000341610 \\
 \end{tabular}
 \item[] 15
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & GET \\
 evidence & 1444681467 \\
 \end{tabular}
 \item[] 16
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000001052 \\
 \end{tabular}
 \item[] 17
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000345158 \\
 \end{tabular}
 \item[] 18
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/docs/DVWA{\_}v1.3.pdf \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/docs/DVWA\_v1.3.pdf \\
 method & GET \\
 evidence & 0000343297 \\
 \end{tabular}
 \item[] 19
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 evidence & 1839030562 \\
@@ -1093,7 +1093,7 @@ evidence & 1839030562 \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/setup.php \\
 method & GET \\
 \end{tabular}
@@ -1108,28 +1108,28 @@ method & GET \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/csrf/?Change=Change\&password{\_}conf=ZAP\&password{\_}new=ZAP \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/csrf/?Change=Change\&password\_conf=ZAP\&password\_new=ZAP \\
 method & GET \\
-param & password{\_}new \\
-evidence & password{\_}new \\
+param & password\_new \\
+evidence & password\_new \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/csrf/?Change=Change\&password{\_}conf=ZAP\&password{\_}new=ZAP \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/csrf/?Change=Change\&password\_conf=ZAP\&password\_new=ZAP \\
 method & GET \\
-param & password{\_}conf \\
-evidence & password{\_}conf \\
+param & password\_conf \\
+evidence & password\_conf \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/brute/?Login=Login\&password=ZAP\&username=ZAP \\
 method & GET \\
 param & username \\
 evidence & username \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/brute/?Login=Login\&password=ZAP\&username=ZAP \\
 method & GET \\
 param & password \\
@@ -1146,12 +1146,12 @@ evidence & password \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & POST \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/vulnerabilities/javascript/ \\
 method & GET \\
 \end{tabular}
@@ -1166,22 +1166,22 @@ method & GET \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/ \\
 method & GET \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/ \\
 method & GET \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
-uri & http://localhost/vulnerabilities/weak{\_}id/ \\
+\begin{tabular}{| l | p{12cm}}
+uri & http://localhost/vulnerabilities/weak\_id/ \\
 method & POST \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & http://localhost/ \\
 method & GET \\
 \end{tabular}
@@ -1189,8 +1189,8 @@ method & GET \\
 \item[] \textbf{Reference} : 
 \begin{itemize}
 \item \url{https://tools.ietf.org/html/rfc6265\#section-4.1}
-\item \url{https://owasp.org/www-project-web-security-testing-guide/v41/4-Web{\_}Application{\_}Security{\_}Testing/06-Session{\_}Management{\_}Testing/02-Testing{\_}for{\_}Cookies{\_}Attributes.html}
-\item \url{http://code.google.com/p/browsersec/wiki/Part2\#Same-origin{\_}policy{\_}for{\_}cookies}
+\item \url{https://owasp.org/www-project-web-security-testing-guide/v41/4-Web\_Application\_Security\_Testing/06-Session\_Management\_Testing/02-Testing\_for\_Cookies\_Attributes.html}
+\item \url{http://code.google.com/p/browsersec/wiki/Part2\#Same-origin\_policy\_for\_cookies}
 \end{itemize}
 \end{itemize}
 \section{Findings for content-signature-2.cdn.mozilla.net}
@@ -1204,7 +1204,7 @@ Scan of content-signature-2.cdn.mozilla.net was done over port 443 and with SSL 
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & https://content-signature-2.cdn.mozilla.net/chains/remote-settings.content-signature.mozilla.org-2020-11-24-15-03-46.chain \\
 method & GET \\
 param & X-Content-Type-Options \\
@@ -1213,7 +1213,7 @@ param & X-Content-Type-Options \\
 \item[] \textbf{Reference} : 
 \begin{itemize}
 \item \url{http://msdn.microsoft.com/en-us/library/ie/gg622941\%28v=vs.85\%29.aspx}
-\item \url{https://owasp.org/www-community/Security{\_}Headers}
+\item \url{https://owasp.org/www-community/Security\_Headers}
 \end{itemize}
 \end{itemize}
 \section{Findings for firefox.settings.services.mozilla.com}
@@ -1227,39 +1227,39 @@ Scan of firefox.settings.services.mozilla.com was done over port 443 and with SS
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & https://firefox.settings.services.mozilla.com/v1/buckets/monitor/collections/changes/records?collection=messaging-experiments\&bucket=main \\
 method & GET \\
 param & Cache-Control \\
 evidence & max-age=60 \\
 \end{tabular}
 \item[] 1
-\begin{tabular}{| l | p{14cm}}
-uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/messaging-experiments/changeset?{\_}expected=1602090770178 \\
+\begin{tabular}{| l | p{12cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/messaging-experiments/changeset?\_expected=1602090770178 \\
 method & GET \\
 param & Cache-Control \\
 \end{tabular}
 \item[] 2
-\begin{tabular}{| l | p{14cm}}
-uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/partitioning-exempt-urls/changeset?{\_}expected=1592906663254 \\
+\begin{tabular}{| l | p{12cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/partitioning-exempt-urls/changeset?\_expected=1592906663254 \\
 method & GET \\
 param & Cache-Control \\
 \end{tabular}
 \item[] 3
-\begin{tabular}{| l | p{14cm}}
-uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/whats-new-panel/changeset?{\_}expected=1600274380060 \\
+\begin{tabular}{| l | p{12cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/whats-new-panel/changeset?\_expected=1600274380060 \\
 method & GET \\
 param & Cache-Control \\
 \end{tabular}
 \item[] 4
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & https://firefox.settings.services.mozilla.com/v1/buckets/monitor/collections/changes/records?collection=partitioning-exempt-urls\&bucket=main \\
 method & GET \\
 param & Cache-Control \\
 evidence & max-age=60 \\
 \end{tabular}
 \item[] 5
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & https://firefox.settings.services.mozilla.com/v1/buckets/monitor/collections/changes/records?collection=whats-new-panel\&bucket=main \\
 method & GET \\
 param & Cache-Control \\
@@ -1268,7 +1268,7 @@ evidence & max-age=60 \\
 \end{enumerate}
 \item[] \textbf{Reference} : 
 \begin{itemize}
-\item \url{https://cheatsheetseries.owasp.org/cheatsheets/Session{\_}Management{\_}Cheat{\_}Sheet.html\#web-content-caching}
+\item \url{https://cheatsheetseries.owasp.org/cheatsheets/Session\_Management\_Cheat\_Sheet.html\#web-content-caching}
 \end{itemize}
 \end{itemize}
 \subsection{Informational}
@@ -1280,8 +1280,8 @@ evidence & max-age=60 \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
-uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/whats-new-panel/changeset?{\_}expected=1600274380060 \\
+\begin{tabular}{| l | p{12cm}}
+uri & https://firefox.settings.services.mozilla.com/v1/buckets/main/collections/whats-new-panel/changeset?\_expected=1600274380060 \\
 method & GET \\
 evidence & 345600000 \\
 \end{tabular}
@@ -1302,7 +1302,7 @@ Scan of snippets.cdn.mozilla.net was done over port 443 and with SSL true.
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & https://snippets.cdn.mozilla.net/us-west/bundles-pregen/Firefox/release/en-us/default.json \\
 method & GET \\
 param & X-Content-Type-Options \\
@@ -1311,7 +1311,7 @@ param & X-Content-Type-Options \\
 \item[] \textbf{Reference} : 
 \begin{itemize}
 \item \url{http://msdn.microsoft.com/en-us/library/ie/gg622941\%28v=vs.85\%29.aspx}
-\item \url{https://owasp.org/www-community/Security{\_}Headers}
+\item \url{https://owasp.org/www-community/Security\_Headers}
 \end{itemize}
 \end{itemize}
 \subsubsection{Incomplete or No Cache-control and Pragma HTTP Header Set}
@@ -1322,7 +1322,7 @@ param & X-Content-Type-Options \\
 \item[] \textbf{Instances}
 \begin{enumerate}
 \item[] 0
-\begin{tabular}{| l | p{14cm}}
+\begin{tabular}{| l | p{12cm}}
 uri & https://snippets.cdn.mozilla.net/us-west/bundles-pregen/Firefox/release/en-us/default.json \\
 method & GET \\
 param & Cache-Control \\
@@ -1331,7 +1331,7 @@ evidence & max-age=600 \\
 \end{enumerate}
 \item[] \textbf{Reference} : 
 \begin{itemize}
-\item \url{https://cheatsheetseries.owasp.org/cheatsheets/Session{\_}Management{\_}Cheat{\_}Sheet.html\#web-content-caching}
+\item \url{https://cheatsheetseries.owasp.org/cheatsheets/Session\_Management\_Cheat\_Sheet.html\#web-content-caching}
 \end{itemize}
 \end{itemize}
 \end{document}

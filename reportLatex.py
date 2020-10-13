@@ -1,7 +1,7 @@
 import json
 
 def latexClean(input):
-    return input.replace("\\", "\\").replace("&", "\&").replace("_", "{\_}").replace("#", "\#").replace("%", "\%").replace("<", "$<$").replace(">", "$>$")
+    return input.replace("\\", "\\").replace("&", "\&").replace("_", "\_").replace("#", "\#").replace("%", "\%").replace("<", "$<$").replace(">", "$>$")
 
 def latexURL(input):
     return "\\url{" + input + "}"
@@ -60,7 +60,7 @@ def instances(scan, index):
     output = str()
     
     output += "\n\\item[] " + str(index)
-    output += "\n\\begin{tabular}{| l | p{14cm}}"
+    output += "\n\\begin{tabular}{| l | p{12cm}}"
 
     for key,value in scan.items():
         output += "\n" + latexClean(key) + " & " + latexClean(value) + " \\\\"
@@ -156,7 +156,7 @@ if __name__ == "__main__":
         scan = json.load(data)
 
     document = str()
-    document += preamble(scan["site"][0]["@host"], "Wes Ring", scan["@generated"])
+    document += preamble("DVWA", "Wes Ring", scan["@generated"])#could use scan["site"][0]["@host"]
     document += abstract([scan["site"][0]["@host"]])
     for x in scan["site"]:
         document += site(x)
