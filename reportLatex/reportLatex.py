@@ -1,7 +1,7 @@
 import json
 
 def latexClean(input):
-    return input.replace("\\", "\\").replace("&", "\&").replace("_", "\_").replace("#", "\#").replace("%", "\%").replace("<", "$<$").replace(">", "$>$")
+    return input.replace("\\", "\\").replace("&", "\&").replace("_", "\_").replace("#", "\#").replace("%", "\%").replace("<", "$<$").replace(">", "$>$").replace('^', '\\textasciicircum ')
 
 def latexURL(input):
     return "\\url{" + input + "}"
@@ -154,7 +154,7 @@ def endDoc():
     return "\n\\end{document}"
 
 if __name__ == "__main__":
-    with open('./testData/dvwa.json') as data:    
+    with open('../testData/dvwa.json') as data:    
         scan = json.load(data)
 
     document = str()
@@ -164,6 +164,6 @@ if __name__ == "__main__":
         document += site(x)
     document += endDoc()
 
-    text_file = open("./outputTest/Output.tex", "w")
+    text_file = open("../outputTest/Output.tex", "w")
     text_file.write(document)
     text_file.close()
